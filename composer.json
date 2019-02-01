@@ -1,0 +1,52 @@
+{
+    "name": "sandermuller/test-package",
+    "description": "My awesome test package",
+    "keywords": [
+        "sandermuller",
+        "test-package"
+    ],
+    "homepage": "https://github.com/sandermuller/test-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sander Muller",
+            "email": "sander@mulver.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "illuminate/support": "5.7.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SanderMuller\\TestPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SanderMuller\\TestPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SanderMuller\\TestPackage\\TestPackageServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "SanderMuller\TestPackage\\TestPackageFacade"
+            }
+        }
+    }
+}
